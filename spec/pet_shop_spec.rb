@@ -220,7 +220,7 @@ class TestPetShop < Minitest::Test #create new class, child of Test
   #   assert_equal(1000, total_cash(@pet_shop))
   # end
 
-  def test_sell_pet_to_customer__insufficient_funds
+  def test_sell_pet_to_customer__insufficient_funds # This passes in tandem with above
     customer = @customers[1]
     pet = find_pet_by_name(@pet_shop,"Arthur")
 
