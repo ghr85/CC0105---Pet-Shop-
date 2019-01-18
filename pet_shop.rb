@@ -48,17 +48,17 @@ end
 
 
 # Use the same method of burrowing above but how to return a nil?
-  def find_pet_by_name(shop_hash, pet_name_string)
-
-#Again a nightmare, remember that when you use return that's you - function over - don't pass go.
-#originally I tried to use a conditional, waste of time
-   for array in shop_hash[:pets] #for every element(pet) in pets array
-     if pet_name_string == array[:name] #if input string matches :name key/value
-       return array # Give back the whole pet hash - THIS WILL BOOT YOU OUT OF FUNCTION!
-     end
-   end #if you find no matches you'll exit iterator at this point
-   return nil #keep the return here, post-iterator else it'll exit too soon.
-  end
+def find_pet_by_name(shop_hash, pet_name_string)
+  
+  #Again a nightmare, remember that when you use return that's you - function over - don't pass go.
+  #originally I tried to use a conditional, waste of time
+  for array in shop_hash[:pets] #for every element(pet) in pets array
+    if pet_name_string == array[:name] #if input string matches :name key/value
+      return array # Give back the whole pet hash - THIS WILL BOOT YOU OUT OF FUNCTION!
+    end
+  end #if you find no matches you'll exit iterator at this point
+  return nil #keep the return here, post-iterator else it'll exit too soon.
+end
 
 
   def remove_pet_by_name(shop_hash, pet_name_string) #when writing variables go function_type
@@ -79,13 +79,13 @@ end
   end
 
   def remove_customer_cash(customer_hash, value_int)#note customer is the hash of customer
-  customer_hash[:cash] -= value_int #access the hash, decrement by value_int
+    customer_hash[:cash] -= value_int #access the hash, decrement by value_int
   end
 
   def customer_pet_count(customer_hash)
-  customer_hash[:pets].count
+    customer_hash[:pets].count
   end
-  #
-  # def add_pet_to_customer
 
-  # end
+  def add_pet_to_customer(customer_hash,pet_hash)
+    customer_hash << pet_hash
+  end
