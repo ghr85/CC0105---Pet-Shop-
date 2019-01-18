@@ -61,7 +61,7 @@ end
   end
 
 
-  def remove_pet_by_name(shop_hash, pet_name_string)
+  def remove_pet_by_name(shop_hash, pet_name_string) #when writing variables go function_type
     for array in shop_hash[:pets] #for every element(pet) in pets array
       if pet_name_string == array[:name] #if input string matches :name key/value
         shop_hash[:pets].delete(array) #hash>pets is the array, array methods can be called.
@@ -78,9 +78,9 @@ end
     customer_int[:cash]
   end
 
-  # def remove_customer_cash
-
-  # end
+  def remove_customer_cash(customer_hash, value_int)#note customer is the hash of customer
+  customer_hash[:cash] -= value_int
+  end
   #
   # def customer_pet_count
 
