@@ -70,14 +70,14 @@ end
   end
 
 
-  def add_pet_to_stock
-
+  def add_pet_to_stock(shop_hash, pet_hash)
+    shop_hash[:pets] << pet_hash
   end
 
-  # def customer_cash
+  def customer_cash(customer_int)
+    customer_int[:cash]
+  end
 
-  # end
-  #
   # def remove_customer_cash
 
   # end
