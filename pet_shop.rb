@@ -82,10 +82,14 @@ end
     customer_hash[:cash] -= value_int #access the hash, decrement by value_int
   end
 
-  def customer_pet_count(customer_hash)
+  def customer_pet_count(customer_hash) #access customer pets array and call count function
     customer_hash[:pets].count
   end
 
-  def add_pet_to_customer(customer_hash,pet_hash)
+  def add_pet_to_customer(customer_hash,pet_hash)# append pet to customer pets array
     customer_hash[:pets] << pet_hash
+  end
+
+  def customer_can_afford_pet(customer_hash, new_pet_hash) #we want this to return a false value so need a boolean expression
+    customer_hash[:cash] > new_pet_hash[:price]? true : false
   end

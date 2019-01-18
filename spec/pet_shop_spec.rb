@@ -180,14 +180,14 @@ class TestPetShop < Minitest::Test #create new class, child of Test
     assert_equal(1, customer_pet_count(customer))
   end
 
-  # # # OPTIONAL
-  #
-  # # def test_customer_can_afford_pet__insufficient_funds
-  # #   customer = @customers[1]
-  # #   can_buy_pet = customer_can_afford_pet(customer, @new_pet)
-  # #   assert_equal(false, can_buy_pet)
-  # # end
-  #
+  # OPTIONAL
+  
+  def test_customer_can_afford_pet__insufficient_funds
+    customer = @customers[1]
+    can_buy_pet = customer_can_afford_pet(customer, @new_pet)
+    assert_equal(false, can_buy_pet)
+  end
+
   # # def test_customer_can_afford_pet__sufficient_funds
   # #   customer = @customers[0]
   # #   can_buy_pet = customer_can_afford_pet(customer, @new_pet)
