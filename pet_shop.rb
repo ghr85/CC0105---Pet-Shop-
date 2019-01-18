@@ -16,17 +16,17 @@ def add_or_remove_cash(shop, value)
 end
 
 # plain sailing
-def pets_sold(shop)
-  return shop[:admin][:pets_sold]
+def pets_sold(pet_shop_hash)
+  return pet_shop_hash[:admin][:pets_sold]
 end
 #plain sailing
-def increase_pets_sold(shop, amount)
-  shop[:admin][:pets_sold] +=   amount
-  return shop[:admin][:pets_sold]
+def increase_pets_sold(pet_shop_hash, amount)
+  pet_shop_hash[:admin][:pets_sold] +=   amount
+  return pet_shop_hash[:admin][:pets_sold]
 end
 #plain sailing
-def stock_count(shop)
-  shop[:pets].count
+def stock_count(pet_shop_hash)
+  pet_shop_hash[:pets].count
 end
 
 #Right, 3 hours burned on this one bloody question. Insanely tricky.
@@ -91,5 +91,18 @@ end
   end
 
   def customer_can_afford_pet(customer_hash, new_pet_hash) #we want this to return a false value so need a boolean expression
-    customer_hash[:cash] > new_pet_hash[:price]? true : false
+    customer_hash[:cash] > new_pet_hash[:price]? true : false #true/false split - this covers both tests
+  end
+
+#this is the first integration test and it's a screamer. Here we go. Note that we're testing for affordability in the late ones.
+  def sell_pet_to_customer(pet_shop_hash, pet_hash, customer_hash) #we need the lot here
+    if customer_can_afford_pet(customer_hash, pet_hash) == true #can they afford it?
+      pet_shop_hash[:admin][:total_cash] += pet_hash[:price] #give pet shop the pennies
+      remove_customer_cash(customer_hash, pet_hash[:price]) #Take customer monies.
+      increase_pets_sold(pet_shop_hash, 1) #increase shop transaction number
+      add_pet_to_customer(customer_hash,pet_hash)#add pet to customer
+      remove_pet_by_name(pet_shop_hash, pet_hash[:name]) #Remove pet from shop stock count
+    else
+      return
+    end
   end
