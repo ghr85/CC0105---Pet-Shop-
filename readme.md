@@ -25,6 +25,7 @@ readme.md - markdown file for good housekeeping.
 * A FOR loop within a FOR loop is used to access an array within an array
 * Whenever you need to access a hash, use the appropriate key for direct access path
 * RETURN will boot you out of the function. Not to be used where a complete iteration through an array is needed.
+* Name variables in the style 'function_type' so that they're not such a pain in the @rse. Will definitely make your life easier when cycling through multi-dimensional data structures. i.e. what they do and what they are!
 
 
 > "There is no (wooden) spoon"
