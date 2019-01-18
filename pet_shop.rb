@@ -49,7 +49,7 @@ end
 
 # Use the same method of burrowing above but how to return a nil?
 def find_pet_by_name(shop_hash, pet_name_string)
-  
+
   #Again a nightmare, remember that when you use return that's you - function over - don't pass go.
   #originally I tried to use a conditional, waste of time
   for array in shop_hash[:pets] #for every element(pet) in pets array
@@ -87,5 +87,5 @@ end
   end
 
   def add_pet_to_customer(customer_hash,pet_hash)
-    customer_hash << pet_hash
+    customer_hash[:pets] << pet_hash
   end
