@@ -71,20 +71,20 @@ end
 
 
   def add_pet_to_stock(shop_hash, pet_hash)
-    shop_hash[:pets] << pet_hash
+    shop_hash[:pets] << pet_hash # append new pet hash to pets array
   end
 
-  def customer_cash(customer_int)
-    customer_int[:cash]
+  def customer_cash(customer_hash)
+    customer_hash[:cash] # return cash value
   end
 
   def remove_customer_cash(customer_hash, value_int)#note customer is the hash of customer
-  customer_hash[:cash] -= value_int
+  customer_hash[:cash] -= value_int #access the hash, decrement by value_int
   end
-  #
-  # def customer_pet_count
 
-  # end
+  def customer_pet_count(customer_hash)
+  customer_hash[:pets].count
+  end
   #
   # def add_pet_to_customer
 
