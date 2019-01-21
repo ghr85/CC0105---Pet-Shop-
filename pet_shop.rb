@@ -96,7 +96,7 @@ end
 
 #this is the first integration test and it's a screamer. Here we go. Note that we're testing for affordability in the late ones.
 def sell_pet_to_customer(pet_shop_hash, pet_hash, customer_hash) #we need the lot here
-  if find_pet_by_name(pet_shop_hash, pet_hash[:name])
+  if pet_hash != nil #return value from find pet will be nil so invert to access function
     if customer_can_afford_pet(customer_hash, pet_hash) == true #can they afford it?
       pet_shop_hash[:admin][:total_cash] += pet_hash[:price] #give pet shop the pennies
       remove_customer_cash(customer_hash, pet_hash[:price]) #Take customer monies.
@@ -107,6 +107,5 @@ def sell_pet_to_customer(pet_shop_hash, pet_hash, customer_hash) #we need the lo
       return
     end
   else
-    return
   end
 end
