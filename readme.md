@@ -12,12 +12,14 @@ Tests will be provided which relate to the functioning of a pet shop.
 
 Your task is to write methods which will - very confidently - make those tests pass.
 
-Bonus points for crafting your own tests and subsequent methods.
+Bonus points for pulling it all together with integration testing.
 
 ## Project Information:
 
-pet_shop_spec.rb - contains tests written with respect to minitest.
+pet_shop_spec.rb - contains tests written with respect to Minitest.
+
 pet_shop.rb - contains methods created in response to said tests.
+
 readme.md - markdown file for good housekeeping.
 
 ## Notes
