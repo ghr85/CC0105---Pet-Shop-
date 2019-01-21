@@ -2,17 +2,17 @@
 
 
 
-def pet_shop_name(shop) #object of class pet_shop, confirm name is...
-  return shop[:name]
+def pet_shop_name(pet_shop_hash) #object of class pet_shop, confirm name is...
+  return pet_shop_hash[:name]
 end
 
-def total_cash(shop) #pass @pet_shop as an array via parameter shop
-  return shop[:admin][:total_cash] # access total cash and return
+def total_cash(pet_shop_hash) #pass @pet_shop as an array via parameter shop
+  return pet_shop_hash[:admin][:total_cash] # access total cash and return
 end
 
-def add_or_remove_cash(shop, value)
-  shop[:admin][:total_cash] +=   value #use shop as pointer, follow to value,increment
-  return shop[:admin][:total_cash]
+def add_or_remove_cash(pet_shop_hash, value_int)
+  pet_shop_hash[:admin][:total_cash] +=   value_int #use shop as pointer, follow to value,increment
+  return pet_shop_hash[:admin][:total_cash]
 end
 
 # plain sailing
@@ -20,8 +20,8 @@ def pets_sold(pet_shop_hash)
   return pet_shop_hash[:admin][:pets_sold]
 end
 #plain sailing
-def increase_pets_sold(pet_shop_hash, amount)
-  pet_shop_hash[:admin][:pets_sold] +=   amount
+def increase_pets_sold(pet_shop_hash, amount_int)
+  pet_shop_hash[:admin][:pets_sold] +=   amount_int
   return pet_shop_hash[:admin][:pets_sold]
 end
 #plain sailing
